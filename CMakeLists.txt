@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 4.0)
+project(HFT_Execution_Engine)
+
+set(CMAKE_CXX_STANDARD 20)
+
+include_directories(include)
+
+add_executable(engine
+    src/main.cpp
+)
