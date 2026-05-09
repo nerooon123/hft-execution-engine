@@ -11,4 +11,6 @@ add_executable(engine
     src/data/market_data_loader.cpp
     src/strategies/print_strategy.cpp
     src/engine/event_loop.cpp
+    src/execution/order.cpp
+    src/execution/fill_engine.cpp
 )
