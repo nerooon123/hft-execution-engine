@@ -9,4 +9,5 @@ add_executable(engine
     src/main.cpp
     src/core/logger.cpp
     src/data/market_data_loader.cpp
+    src/strategies/print_strategy.cpp
 )
