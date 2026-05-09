@@ -7,4 +7,5 @@ include_directories(include)
 
 add_executable(engine
     src/main.cpp
+    src/core/logger.cpp
 )
