@@ -13,4 +13,5 @@ add_executable(engine
     src/engine/event_loop.cpp
     src/execution/order.cpp
     src/execution/fill_engine.cpp
+    src/portfolio/position_manager.cpp
 )

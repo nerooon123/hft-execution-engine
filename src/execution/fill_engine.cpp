@@ -1,10 +1,13 @@
 #include "execution/fill_engine.hpp"
 #include "core/logger.hpp"
 
-#include <string>
-
 namespace hft {
 namespace execution {
+
+FillEngine::FillEngine(
+    portfolio::PositionManager& position_manager
+)
+    : position_manager_(position_manager) {}
 
 void FillEngine::execute(const Order& order) {
     std::string side_str =
@@ -12,13 +15,17 @@ void FillEngine::execute(const Order& order) {
             ? "BUY"
             : "SELL";
 
-    hft::core::Logger::log(
-        hft::core::LogLevel::INFO,
+    core::Logger::log(
+        core::LogLevel::INFO,
         "Order executed: " +
         side_str +
-        " | Price: " + std::to_string(order.getPrice()) +
-        " | Qty: " + std::to_string(order.getQuantity())
+        " | Price: " +
+        std::to_string(order.getPrice()) +
+        " | Qty: " +
+        std::to_string(order.getQuantity())
     );
+
+    position_manager_.onFill(order);
 }
 
 } // namespace execution
